@@ -51,6 +51,19 @@ app.put('/api/user/:id', async (req, res) => {
     }
 })
 
+app.delete('/api/user/:id', async (req, res) => {
+    try{
+        const {id} = req.params
+        const user = await User.findByIdAndDelete(id)
+        if(!user){
+            return req.status(404).json({message: "This product is not found"});
+        }
+        res.status(200).json({message: `the user with id: ${id} is deleted`})
+    } catch (error){
+        res.status(500).json({message: error.message})
+    }
+})
+
 mongoose.connect("mongodb+srv://jhon437699:9jWGuABKtpzlNZAz@taskhub.prohz.mongodb.net/?retryWrites=true&w=majority&appName=TaskHub")
 .then(() => {
     console.log("connected to the dataBase")

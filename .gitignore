@@ -3,6 +3,3 @@ node_modules/
 
 # Ignorar archivo .env
 .env
-
-# Ignorar archivo .gitignore 
-.gitignore

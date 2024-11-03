@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
     res.send("Hello from Node API Server Updated");
 });
 
-mongoose.connect("mongodb+srv://jhon437699:9jWGuABKtpzlNZAz@taskhub.prohz.mongodb.net/?retryWrites=true&w=majority&appName=TaskHub")
+mongoose.connect("mongodb+srv://jhon437699:9jWGuABKtpzlNZAz@taskhub.prohz.mongodb.net/taskhub?retryWrites=true&w=majority&appName=TaskHub")
 .then(() => {
     console.log("connected to the dataBase")
     app.listen(port, () => {
